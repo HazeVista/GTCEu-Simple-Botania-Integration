@@ -167,8 +167,26 @@ public class GTBMaterials {
         block.setIgnored(ELEMENTIUM, () -> BotaniaBlocks.elementiumBlock);
         nugget.setIgnored(ELEMENTIUM, () -> BotaniaItems.elementiumNugget);
 
-        ingot.setIgnored(GAIASTEEL, ItemsBA.GAIASTEEL_INGOT);
-        nugget.setIgnored(GAIASTEEL, ItemsBA.GAIASTEEL_NUGGET);
-        block.setIgnored(GAIASTEEL, BlocksBA.GAIASTEEL_BLOCK);
+        ingot.setIgnored(GAIASTEEL, () -> {
+            try {
+                return ItemsBA.GAIASTEEL_INGOT;
+            } catch (Exception e) {
+                return null;
+            }
+        });
+        nugget.setIgnored(GAIASTEEL, () -> {
+            try {
+                return ItemsBA.GAIASTEEL_NUGGET;
+            } catch (Exception e) {
+                return null;
+            }
+        });
+        block.setIgnored(GAIASTEEL, () -> {
+            try {
+                return BlocksBA.GAIASTEEL_BLOCK;
+            } catch (Exception e) {
+                return null;
+            }
+        });
     }
 }

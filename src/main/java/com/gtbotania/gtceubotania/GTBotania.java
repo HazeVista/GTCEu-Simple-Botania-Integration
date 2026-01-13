@@ -67,11 +67,7 @@ public class GTBotania {
         GTBDatagen.init();
     }
 
-    private void commonSetup(final FMLCommonSetupEvent event) {
-        event.enqueueWork(() -> {
-            GTBMaterials.init();
-        });
-    }
+    private void commonSetup(final FMLCommonSetupEvent event) {}
 
     private void clientSetup(final FMLClientSetupEvent event) {}
 
@@ -104,6 +100,7 @@ public class GTBotania {
      */
     private void addMaterials(MaterialEvent event) {
         GTBMaterials.register();
+        GTBMaterials.init();
     }
 
     /**
