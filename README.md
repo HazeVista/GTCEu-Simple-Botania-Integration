@@ -2,8 +2,8 @@
 
 Made by the collective AstroGreg Team since Botania was preventing us from doing mixins or setting up proper datagen in our core mod. 
 
-Feel free to use this mod in any project, it just requires Botania, Botanic Additions, and GregTech Molecular Drawings as dependencies.
+Only intended for use in the AstroGreg:Exsilium Modpack but feel free to use any code from here in your own project.
 
-All it does is add Manasteel, Terrasteel, Elementium, and Gaiasteel as GTCEu Materials with setIgnored.
+All it does is add Botania and Botanic Additions items as GTCEu Materials with setIgnored.
 
- Original template for this mod by [screret](https://github.com/screret), maintained by [JuiceyBeans](https://github.com/JuiceyBeans)
+Original template for this mod created by [screret](https://github.com/screret) and [JuiceyBeans](https://github.com/JuiceyBeans)
