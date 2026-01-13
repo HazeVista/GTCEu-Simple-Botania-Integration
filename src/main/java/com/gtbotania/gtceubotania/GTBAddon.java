@@ -1,11 +1,12 @@
 package com.gtbotania.gtceubotania;
 
-import com.gregtechceu.gtceu.api.addon.GTAddon;
-import com.gregtechceu.gtceu.api.addon.IGTAddon;
-
-import com.gregtechceu.gtceu.api.registry.registrate.GTRegistrate;
 import com.gtbotania.gtceubotania.common.data.materials.GTBElements;
 import com.gtbotania.gtceubotania.common.registry.GTBRegistry;
+
+import com.gregtechceu.gtceu.api.addon.GTAddon;
+import com.gregtechceu.gtceu.api.addon.IGTAddon;
+import com.gregtechceu.gtceu.api.registry.registrate.GTRegistrate;
+
 import net.minecraft.data.recipes.FinishedRecipe;
 
 import java.util.function.Consumer;
@@ -42,5 +43,4 @@ public class GTBAddon implements IGTAddon {
         IGTAddon.super.registerElements();
         GTBElements.init();
     }
-
 }

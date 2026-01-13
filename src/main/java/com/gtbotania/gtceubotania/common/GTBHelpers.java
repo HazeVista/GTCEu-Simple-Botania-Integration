@@ -1,15 +1,18 @@
 package com.gtbotania.gtceubotania.common;
 
+import com.gtbotania.gtceubotania.GTBotania;
+
 import com.gregtechceu.gtceu.api.GTCEuAPI;
 import com.gregtechceu.gtceu.api.GTValues;
 import com.gregtechceu.gtceu.api.data.chemical.material.ItemMaterialData;
 import com.gregtechceu.gtceu.api.data.chemical.material.Material;
 import com.gregtechceu.gtceu.api.data.chemical.material.stack.ItemMaterialInfo;
-import com.gtbotania.gtceubotania.GTBotania;
-import it.unimi.dsi.fastutil.objects.Reference2LongOpenHashMap;
+
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.registries.ForgeRegistries;
+
+import it.unimi.dsi.fastutil.objects.Reference2LongOpenHashMap;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -52,5 +55,4 @@ public class GTBHelpers {
 
         ItemMaterialData.registerMaterialInfo(item, new ItemMaterialInfo(matStacks));
     }
-    
 }

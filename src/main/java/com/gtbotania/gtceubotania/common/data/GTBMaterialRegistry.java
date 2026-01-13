@@ -1,6 +1,7 @@
 package com.gtbotania.gtceubotania.common.data;
 
 import com.gregtechceu.gtceu.api.data.chemical.material.Material;
+
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.Fluids;
 
@@ -21,6 +22,4 @@ public class GTBMaterialRegistry {
     public static Material getMaterial(Fluid fluid) {
         return FLUID_TO_MATERIAL.get(fluid);
     }
-
-
 }

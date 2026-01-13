@@ -1,10 +1,12 @@
 package com.gtbotania.gtceubotania.common.data.materials;
 
+import com.gtbotania.gtceubotania.GTBotania;
+import com.gtbotania.gtceubotania.common.GTVoltage;
+
 import com.gregtechceu.gtceu.api.GTValues;
 import com.gregtechceu.gtceu.api.data.chemical.material.Material;
 import com.gregtechceu.gtceu.api.data.chemical.material.properties.BlastProperty;
-import com.gtbotania.gtceubotania.GTBotania;
-import com.gtbotania.gtceubotania.common.GTVoltage;
+
 import org.zeith.botanicadds.init.BlocksBA;
 import org.zeith.botanicadds.init.ItemsBA;
 import vazkii.botania.common.block.BotaniaBlocks;
@@ -29,6 +31,7 @@ public class GTBMaterials {
     public static Material ELEMENTIUM;
     public static Material GAIASTEEL;
     public static Material AETHER;
+    public static Material GAIAFORGED_NAQUADAH;
 
     public static void register() {
         // Botania
@@ -127,10 +130,22 @@ public class GTBMaterials {
                 .color(0x8c2929).iconSet(BRIGHT)
                 // .components(VESNIUM, )
                 .buildAndRegister();
+
+        GAIAFORGED_NAQUADAH = new Material.Builder(GTBotania.id("gaiaforged_naquadah"))
+                .langValue("Gaia-Forged Naquadah")
+                .ingot().liquid(2774)
+                .color(0x7a1d29).secondaryColor(0x000000).iconSet(SHINY)
+                .blastTemp(7100, BlastProperty.GasTier.HIGH, 491520, 1800)
+                .cableProperties(V[GTValues.ZPM], 64, 0, true)
+                .rotorStats(1100, 380, 3, 32000)
+                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_FRAME, DISABLE_DECOMPOSITION,
+                        GENERATE_GEAR, GENERATE_LONG_ROD, GENERATE_FOIL, GENERATE_RING,
+                        GENERATE_SMALL_GEAR, GENERATE_FINE_WIRE, GENERATE_ROTOR)
+                // .components()
+                .buildAndRegister();
     }
 
     public static void init() {
-
         // botania/additions
         dust.setIgnored(MANA, () -> BotaniaItems.manaPowder);
 
@@ -155,5 +170,5 @@ public class GTBMaterials {
         ingot.setIgnored(GAIASTEEL, ItemsBA.GAIASTEEL_INGOT);
         nugget.setIgnored(GAIASTEEL, ItemsBA.GAIASTEEL_NUGGET);
         block.setIgnored(GAIASTEEL, BlocksBA.GAIASTEEL_BLOCK);
-}
+    }
 }

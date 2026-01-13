@@ -15,5 +15,4 @@ public class GTBLangHandler {
     protected static String getSubKey(String key, int index) {
         return key + "." + index;
     }
-
 }

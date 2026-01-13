@@ -27,5 +27,4 @@ public class GTBMachineUtils {
         }
         return definitions;
     }
-
 }
