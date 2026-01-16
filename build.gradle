@@ -1,11 +1,12 @@
 buildscript {
     repositories {
         maven { url = 'https://repo.spongepowered.org/repository/maven-public/' }
+
         mavenCentral()
     }
-//    dependencies {
-//        classpath 'org.spongepowered:mixingradle:0.7-SNAPSHOT'
-//    }
+    dependencies {
+        classpath 'org.spongepowered:mixingradle:0.7-SNAPSHOT'
+    }
 }
 
 plugins {
@@ -14,6 +15,8 @@ plugins {
     id "maven-publish"
     id 'net.neoforged.moddev.legacyforge' version '2.0.91'
     id 'com.diffplug.spotless' version '7.0.2'
+//    id 'net.minecraftforge.gradle' version '5.1.+'
+//    id 'org.spongepowered.mixin' version '0.7.+'
 }
 
 sourceSets {
@@ -23,13 +26,14 @@ sourceSets {
 }
 
 repositories {
+
     mavenLocal()
+
     mavenCentral()
 
     flatDir {
         dir 'libs'
     }
-
     maven {
         name = 'GTCEu Maven'
         url = 'https://maven.gtceu.com'
@@ -57,7 +61,6 @@ repositories {
         url = "https://maven.theillusivec4.top/"
     }
     maven {
-        // Curse Forge File
         url "https://cursemaven.com/"
         content {
             includeGroup "curse.maven"
@@ -65,13 +68,43 @@ repositories {
     }
     maven {
         // EMI
-		name = "TerraformersMC"
-		url = "https://maven.terraformersmc.com/"
-	}
+        name = "TerraformersMC"
+        url = "https://maven.terraformersmc.com/"
+    }
     maven {
         url = "https://thedarkcolour.github.io/KotlinForForge/"
     }
-
+    maven {
+        url = "https://maven.teamresourceful.com/repository/maven-public/"
+    }
+    maven {
+        url = "https://maven.resourcefulbees.com/repository/maven-public/"
+        content {
+            includeGroup "com.teamresourceful.resourcefullib"
+            includeGroup "earth.terrarium"
+        }
+    }
+    maven {
+        url = "https://maven.latvian.dev/releases"
+    }
+    maven {
+        url = "https://maven.architectury.dev"
+    }
+    maven {
+        name = 'GuideME Snapshots'
+        url = 'https://central.sonatype.com/repository/maven-snapshots/'
+        content {
+            includeModule('org.appliedenergistics', 'guideme')
+        }
+    }
+    //create
+    maven {
+        url = 'https://maven.createmod.net'
+    }
+    maven {
+        url = "https://maven.ithundxr.dev/mirror" }
+    maven {
+        url = "https://raw.githubusercontent.com/Fuzss/modresources/main/maven/" }
 }
 
 version = mod_version
@@ -134,7 +167,7 @@ legacyForge {
 }
 //jar {
 //    manifest.attributes([
-//            "MixinConfigs": "examplemod.mixins.json"
+//            "MixinConfigs": "astrocore.mixins.json"
 //    ])
 //}
 
@@ -145,6 +178,22 @@ dependencies {
 
     // Mixin
 //    annotationProcessor('org.spongepowered:mixin:0.8.5:processor')
+
+    //Create and dependencies
+    modImplementation("com.simibubi.create:create-${minecraft_version}:${create_version}:slim") { transitive = false }
+    modImplementation("net.createmod.ponder:Ponder-Forge-${minecraft_version}:${ponder_version}")
+    modCompileOnly("dev.engine-room.flywheel:flywheel-forge-api-${minecraft_version}:${flywheel_version}")
+    modRuntimeOnly("dev.engine-room.flywheel:flywheel-forge-${minecraft_version}:${flywheel_version}")
+    modImplementation("com.tterrag.registrate:Registrate:${registrate_version}")
+    modCompileOnly("io.github.llamalad7:mixinextras-common:0.4.1")
+    modImplementation("io.github.llamalad7:mixinextras-forge:0.4.1")
+
+    //Ad Astra and dependencies
+    modImplementation("earth.terrarium.adastra:ad_astra-forge-${minecraft_version}:${ad_astra_version}")
+    modImplementation("com.teamresourceful.resourcefullib:resourcefullib-forge-${minecraft_version}:${rlib_version}")
+    modImplementation("com.teamresourceful.resourcefulconfig:resourcefulconfig-forge-${minecraft_version}:${rconfig_version}")
+    modImplementation("earth.terrarium.botarium:botarium-forge-${minecraft_version}:${botarium_version}")
+    modImplementation("com.drd.ad_extendra:ad_extendra-forge-${minecraft_version}:${ad_extendra_version}")
 
     // JEI, EMI, Jade
     modCompileOnly("mezz.jei:jei-${minecraft_version}-forge-api:${jei_version}")
@@ -159,10 +208,24 @@ dependencies {
     modImplementation("com.tterrag.registrate:Registrate:${registrate_version}")
     modImplementation("dev.toma.configuration:configuration-forge-${minecraft_version}:${configuration_version}")
     modImplementation("com.rubenverg.gtmoldraw:gtmoldraw-${gtmoldraw_version}")
+    modImplementation("com.astro.core:astrogreg-${astrogreg_version}")
+
+    //KubeJS
+    modImplementation("dev.latvian.mods:kubejs-forge:${kubejs_version}")
+    modImplementation("dev.latvian.mods:rhino-forge:${rhino_version}")
+    modImplementation("dev.architectury:architectury-forge:${architectury_version}")
 
     // lombok
     compileOnly 'org.projectlombok:lombok:1.18.24'
     annotationProcessor 'org.projectlombok:lombok:1.18.24'
+
+    //AE2 and dependencies
+    modImplementation("org.appliedenergistics:appliedenergistics2-forge-${ae_version}")
+    modImplementation("org.appliedenergistics:guideme-${guide_version}")
+
+    //Powah and dependencies
+    modImplementation("owmii.powah:Powah-${powah_version}")
+    modImplementation("me.shedaniel:cloth-config-${cloth_version}-forge")
 
     //Botania, addons and dependencies
     modImplementation("vazkii.botania:Botania:${minecraft_version}-${botania_version}-FORGE")
@@ -171,6 +234,9 @@ dependencies {
     modImplementation("manafluid:manafluid:${minecraft_version}-${manafluid_version}")
     modImplementation("botanicadds:BotanicAdditions:${minecraft_version}-${botanicadditions_version}")
     modImplementation("hammerlib:HammerLib-${minecraft_version}-${hammerlib_version}")
+
+//    Apply Mixin AP
+//    annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 }
 
 // See com.example.examplemod.mixin.DummyMixin for information about mixins

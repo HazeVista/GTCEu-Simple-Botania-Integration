@@ -6,15 +6,19 @@ import com.gtbotania.gtceubotania.common.GTVoltage;
 import com.gregtechceu.gtceu.api.GTValues;
 import com.gregtechceu.gtceu.api.data.chemical.material.Material;
 import com.gregtechceu.gtceu.api.data.chemical.material.properties.BlastProperty;
+import com.gregtechceu.gtceu.api.data.chemical.material.properties.ToolProperty;
+import com.gregtechceu.gtceu.api.item.tool.GTToolType;
 
 import org.zeith.botanicadds.init.BlocksBA;
 import org.zeith.botanicadds.init.ItemsBA;
 import vazkii.botania.common.block.BotaniaBlocks;
 import vazkii.botania.common.item.BotaniaItems;
 
+import static com.astro.core.common.data.materials.AstroMaterials.VESNIUM;
 import static com.gregtechceu.gtceu.api.data.chemical.material.info.MaterialFlags.*;
 import static com.gregtechceu.gtceu.api.data.chemical.material.info.MaterialIconSet.*;
 import static com.gregtechceu.gtceu.api.data.tag.TagPrefix.*;
+import static com.gregtechceu.gtceu.api.item.tool.GTToolType.*;
 import static com.gregtechceu.gtceu.common.data.GTMaterials.*;
 
 public class GTBMaterials {
@@ -78,6 +82,12 @@ public class GTBMaterials {
                 .blastTemp(1000, BlastProperty.GasTier.LOW, 120, 400)
                 .flags(GENERATE_FRAME, GENERATE_GEAR, DISABLE_DECOMPOSITION, GENERATE_PLATE,
                         GENERATE_ROD, MORTAR_GRINDABLE, DISABLE_ALLOY_BLAST, DISABLE_ALLOY_PROPERTY)
+                .toolStats(new ToolProperty(9.0F, 8.0F, 768, 3,
+                        new GTToolType[] { PICKAXE, AXE, HOE, SHOVEL, SWORD, MINING_HAMMER, SPADE, SAW,
+                                HARD_HAMMER, WRENCH, FILE, CROWBAR, SCREWDRIVER, MORTAR, WIRE_CUTTER,
+                                SCYTHE, KNIFE, BUTCHERY_KNIFE, DRILL_EV, DRILL_HV, DRILL_LV, DRILL_IV,
+                                DRILL_MV, CHAINSAW_LV, WRENCH_LV, WRENCH_HV, WRENCH_IV, BUZZSAW,
+                                SCREWDRIVER_LV, WIRE_CUTTER_LV, WIRE_CUTTER_HV, WIRE_CUTTER_IV }))
                 .fluidPipeProperties(1855, 150, true, false, false, false)
                 .color(0x228cc9).iconSet(SHINY)
                 .components(Steel, 1, MANA, 1).formula("Fe✨")
@@ -99,6 +109,12 @@ public class GTBMaterials {
                 .blastTemp(1700, BlastProperty.GasTier.LOW, (int) GTVoltage.VA.MV, 800)
                 .flags(GENERATE_FRAME, GENERATE_GEAR, DISABLE_DECOMPOSITION, GENERATE_PLATE,
                         GENERATE_ROD, DISABLE_ALLOY_BLAST, DISABLE_ALLOY_PROPERTY)
+                .toolStats(new ToolProperty(11.0F, 14.0F, 1024, 4,
+                        new GTToolType[] { PICKAXE, AXE, HOE, SHOVEL, SWORD, MINING_HAMMER, SPADE, SAW,
+                                HARD_HAMMER, WRENCH, FILE, CROWBAR, SCREWDRIVER, MORTAR, WIRE_CUTTER,
+                                SCYTHE, KNIFE, BUTCHERY_KNIFE, DRILL_EV, DRILL_HV, DRILL_LV, DRILL_IV,
+                                DRILL_MV, CHAINSAW_LV, WRENCH_LV, WRENCH_HV, WRENCH_IV, BUZZSAW,
+                                SCREWDRIVER_LV, WIRE_CUTTER_LV, WIRE_CUTTER_HV, WIRE_CUTTER_IV }))
                 .fluidPipeProperties(2142, 225, true, false, false, false)
                 .color(0x159e1e).iconSet(BRIGHT)
                 .components(Steel, 1, Beryllium, 1, Aluminium, 1, MANA, 1)
@@ -110,6 +126,13 @@ public class GTBMaterials {
                 .langValue("§dAlfsteel")
                 .ingot()
                 .fluid()
+                .toolStats(ToolProperty.Builder.of(20.0F, 16.0F, 2048, 5)
+                        .types(PICKAXE, AXE, HOE, SHOVEL, SWORD, MINING_HAMMER, SPADE, SAW,
+                                HARD_HAMMER, WRENCH, FILE, CROWBAR, SCREWDRIVER, MORTAR, WIRE_CUTTER,
+                                SCYTHE, KNIFE, BUTCHERY_KNIFE, DRILL_EV, DRILL_HV, DRILL_LV, DRILL_IV,
+                                DRILL_MV, CHAINSAW_LV, WRENCH_LV, WRENCH_HV, WRENCH_IV, BUZZSAW,
+                                SCREWDRIVER_LV, WIRE_CUTTER_LV, WIRE_CUTTER_HV, WIRE_CUTTER_IV)
+                        .magnetic().build())
                 .blastTemp(3500, BlastProperty.GasTier.MID, (int) GTVoltage.VA.IV, 1600)
                 .flags(GENERATE_FRAME, GENERATE_GEAR, DISABLE_DECOMPOSITION, GENERATE_PLATE, GENERATE_ROD)
                 .fluidPipeProperties(2426, 300, true, false, false, false)
@@ -126,9 +149,16 @@ public class GTBMaterials {
                 .blastTemp(7100, BlastProperty.GasTier.HIGH, (int) GTVoltage.VA.ZPM, 2400)
                 .flags(GENERATE_FRAME, GENERATE_GEAR, DISABLE_DECOMPOSITION, GENERATE_PLATE, GENERATE_ROD,
                         DISABLE_ALLOY_BLAST)
+                .toolStats(ToolProperty.Builder.of(48.0F, 22.0F, 4096, 6)
+                        .types(PICKAXE, AXE, HOE, SHOVEL, SWORD, MINING_HAMMER, SPADE, SAW,
+                                HARD_HAMMER, WRENCH, FILE, CROWBAR, SCREWDRIVER, MORTAR, WIRE_CUTTER,
+                                SCYTHE, KNIFE, BUTCHERY_KNIFE, DRILL_EV, DRILL_HV, DRILL_LV, DRILL_IV,
+                                DRILL_MV, CHAINSAW_LV, WRENCH_LV, WRENCH_HV, WRENCH_IV, BUZZSAW,
+                                SCREWDRIVER_LV, WIRE_CUTTER_LV, WIRE_CUTTER_HV, WIRE_CUTTER_IV)
+                        .magnetic().build())
                 .fluidPipeProperties(3776, 400, true, true, true, true)
                 .color(0x8c2929).iconSet(BRIGHT)
-                // .components(VESNIUM, )
+                .components(ELEMENTIUM, 8, VESNIUM, 6, Duranium, 3, TitaniumTungstenCarbide, 2, AETHER, 1)
                 .buildAndRegister();
 
         GAIAFORGED_NAQUADAH = new Material.Builder(GTBotania.id("gaiaforged_naquadah"))
@@ -146,7 +176,6 @@ public class GTBMaterials {
     }
 
     public static void init() {
-        // botania/additions
         dust.setIgnored(MANA, () -> BotaniaItems.manaPowder);
 
         gem.setIgnored(MANA_DIAMOND, () -> BotaniaItems.manaDiamond);
