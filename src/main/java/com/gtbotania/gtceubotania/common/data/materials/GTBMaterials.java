@@ -7,6 +7,7 @@ import com.gregtechceu.gtceu.api.GTValues;
 import com.gregtechceu.gtceu.api.data.chemical.material.Material;
 import com.gregtechceu.gtceu.api.data.chemical.material.properties.BlastProperty;
 import com.gregtechceu.gtceu.api.data.chemical.material.properties.ToolProperty;
+import com.gregtechceu.gtceu.api.fluids.FluidBuilder;
 import com.gregtechceu.gtceu.api.item.tool.GTToolType;
 
 import org.zeith.botanicadds.init.BlocksBA;
@@ -51,7 +52,7 @@ public class GTBMaterials {
         AETHER = new Material.Builder(
                 GTBotania.id("aether"))
                 .langValue("§3Æther§r")
-                .gas()
+                .gas(new FluidBuilder().customStill())
                 .element(GTBElements.AE).formula("✨")
                 .color(0x26a33f)
                 .buildAndRegister();

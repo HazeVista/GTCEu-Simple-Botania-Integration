@@ -7,3 +7,5 @@ Only intended for use in the AstroGreg:Exsilium Modpack but feel free to use any
 All it does is add Botania and Botanic Additions items as GTCEu Materials with setIgnored.
 
 Original template for this mod created by [screret](https://github.com/screret) and [JuiceyBeans](https://github.com/JuiceyBeans)
+
+Credit for the custom fluid still for Æther goes to [Redeix](https://github.com/Redeix), as it is a modified version of his artwork.
