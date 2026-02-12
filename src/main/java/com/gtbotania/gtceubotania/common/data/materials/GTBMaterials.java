@@ -10,6 +10,7 @@ import com.gregtechceu.gtceu.api.data.chemical.material.properties.ToolProperty;
 import com.gregtechceu.gtceu.api.fluids.FluidBuilder;
 import com.gregtechceu.gtceu.api.item.tool.GTToolType;
 
+import com.astro.core.common.data.materials.AstroMaterialFlags;
 import org.zeith.botanicadds.init.BlocksBA;
 import org.zeith.botanicadds.init.ItemsBA;
 import vazkii.botania.common.block.BotaniaBlocks;
@@ -25,7 +26,6 @@ import static com.gregtechceu.gtceu.common.data.GTMaterials.*;
 public class GTBMaterials {
 
     private static final long[] V = GTValues.V;
-    private static final int[] VA = GTValues.VA;
 
     public static Material MANA;
     public static Material MANASTEEL;
@@ -169,10 +169,11 @@ public class GTBMaterials {
                 .blastTemp(7100, BlastProperty.GasTier.HIGH, 491520, 1800)
                 .cableProperties(V[GTValues.ZPM], 64, 0, true)
                 .rotorStats(1100, 380, 3, 32000)
-                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_FRAME, DISABLE_DECOMPOSITION,
+                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_FRAME, DISABLE_ALLOY_PROPERTY,
                         GENERATE_GEAR, GENERATE_LONG_ROD, GENERATE_FOIL, GENERATE_RING,
-                        GENERATE_SMALL_GEAR, GENERATE_FINE_WIRE, GENERATE_ROTOR)
-                // .components()
+                        GENERATE_SMALL_GEAR, GENERATE_FINE_WIRE, GENERATE_ROTOR, GENERATE_SPRING,
+                        AstroMaterialFlags.GENERATE_COMPRESSED_SPRING)
+                .components(Naquadria, 1, GAIASTEEL, 1)
                 .buildAndRegister();
     }
 
