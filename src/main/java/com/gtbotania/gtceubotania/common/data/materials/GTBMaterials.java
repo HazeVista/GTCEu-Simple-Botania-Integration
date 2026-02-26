@@ -16,7 +16,6 @@ import org.zeith.botanicadds.init.ItemsBA;
 import vazkii.botania.common.block.BotaniaBlocks;
 import vazkii.botania.common.item.BotaniaItems;
 
-import static com.astro.core.common.data.materials.AstroMaterials.VESNIUM;
 import static com.gregtechceu.gtceu.api.data.chemical.material.info.MaterialFlags.*;
 import static com.gregtechceu.gtceu.api.data.chemical.material.info.MaterialIconSet.*;
 import static com.gregtechceu.gtceu.api.data.tag.TagPrefix.*;
@@ -27,6 +26,7 @@ public class GTBMaterials {
 
     private static final long[] V = GTValues.V;
 
+    public static Material VESNIUM_PLACEHOLDER;
     public static Material MANA;
     public static Material MANASTEEL;
     public static Material MANA_DIAMOND;
@@ -40,6 +40,13 @@ public class GTBMaterials {
 
     public static void register() {
         // Botania
+        VESNIUM_PLACEHOLDER = new Material.Builder(
+                GTBotania.id("vesnium_placeholder"))
+                .flags(DISABLE_DECOMPOSITION, DISABLE_ALLOY_PROPERTY)
+                .components(RedSteel, 4, MolybdenumDisilicide, 3, TungstenCarbide, 1)
+                .color(0xf77b68).secondaryColor(0xcb4e4f)
+                .buildAndRegister();
+
         MANA = new Material.Builder(
                 GTBotania.id("mana"))
                 .langValue("Mana")
@@ -159,7 +166,7 @@ public class GTBMaterials {
                         .magnetic().build())
                 .fluidPipeProperties(3776, 400, true, true, true, true)
                 .color(0x8c2929).iconSet(BRIGHT)
-                .components(ELEMENTIUM, 8, VESNIUM, 6, Duranium, 3, TitaniumTungstenCarbide, 2, AETHER, 1)
+                .components(ELEMENTIUM, 8, VESNIUM_PLACEHOLDER, 6, Duranium, 3, TitaniumTungstenCarbide, 2, AETHER, 1)
                 .buildAndRegister();
 
         GAIAFORGED_NAQUADAH = new Material.Builder(GTBotania.id("gaiaforged_naquadah"))
