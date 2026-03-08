@@ -16,6 +16,7 @@ import org.zeith.botanicadds.init.ItemsBA;
 import vazkii.botania.common.block.BotaniaBlocks;
 import vazkii.botania.common.item.BotaniaItems;
 
+import static com.astro.core.common.data.materials.AstroMaterialSet.SHINY_SUPER;
 import static com.gregtechceu.gtceu.api.data.chemical.material.info.MaterialFlags.*;
 import static com.gregtechceu.gtceu.api.data.chemical.material.info.MaterialIconSet.*;
 import static com.gregtechceu.gtceu.api.data.tag.TagPrefix.*;
@@ -172,7 +173,7 @@ public class GTBMaterials {
         GAIAFORGED_NAQUADAH = new Material.Builder(GTBotania.id("gaiaforged_naquadah"))
                 .langValue("Gaia-Forged Naquadah")
                 .ingot().liquid(2774)
-                .color(0x7a1d29).secondaryColor(0x000000).iconSet(SHINY)
+                .color(0x7a1d29).secondaryColor(0x000000).iconSet(SHINY_SUPER)
                 .blastTemp(7100, BlastProperty.GasTier.HIGH, 491520, 1800)
                 .cableProperties(V[GTValues.ZPM], 64, 0, true)
                 .rotorStats(1100, 380, 3, 32000)
