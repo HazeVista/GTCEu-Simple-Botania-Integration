@@ -17,12 +17,14 @@ import vazkii.botania.common.block.BotaniaBlocks;
 import vazkii.botania.common.item.BotaniaItems;
 
 import static com.astro.core.common.data.materials.AstroMaterialSet.SHINY_SUPER;
+import static com.astro.core.common.data.materials.AstroMaterials.GAIA_ICHOR;
 import static com.gregtechceu.gtceu.api.data.chemical.material.info.MaterialFlags.*;
 import static com.gregtechceu.gtceu.api.data.chemical.material.info.MaterialIconSet.*;
 import static com.gregtechceu.gtceu.api.data.tag.TagPrefix.*;
 import static com.gregtechceu.gtceu.api.item.tool.GTToolType.*;
 import static com.gregtechceu.gtceu.common.data.GTMaterials.*;
 
+@SuppressWarnings("all")
 public class GTBMaterials {
 
     private static final long[] V = GTValues.V;
@@ -89,7 +91,7 @@ public class GTBMaterials {
                 .ingot()
                 .fluid()
                 .blastTemp(1000, BlastProperty.GasTier.LOW, 120, 400)
-                .flags(GENERATE_FRAME, GENERATE_GEAR, DISABLE_DECOMPOSITION, GENERATE_PLATE,
+                .flags(GENERATE_FRAME, GENERATE_GEAR, DISABLE_DECOMPOSITION, GENERATE_PLATE, GENERATE_RING,
                         GENERATE_ROD, MORTAR_GRINDABLE, DISABLE_ALLOY_BLAST, DISABLE_ALLOY_PROPERTY)
                 .toolStats(new ToolProperty(9.0F, 8.0F, 768, 3,
                         new GTToolType[] { PICKAXE, AXE, HOE, SHOVEL, SWORD, MINING_HAMMER, SPADE, SAW,
@@ -117,7 +119,7 @@ public class GTBMaterials {
                 .fluid()
                 .blastTemp(1700, BlastProperty.GasTier.LOW, (int) GTVoltage.VA.MV, 800)
                 .flags(GENERATE_FRAME, GENERATE_GEAR, DISABLE_DECOMPOSITION, GENERATE_PLATE,
-                        GENERATE_ROD, DISABLE_ALLOY_BLAST, DISABLE_ALLOY_PROPERTY)
+                        GENERATE_ROD, DISABLE_ALLOY_BLAST, DISABLE_ALLOY_PROPERTY, GENERATE_RING)
                 .toolStats(new ToolProperty(11.0F, 14.0F, 1024, 4,
                         new GTToolType[] { PICKAXE, AXE, HOE, SHOVEL, SWORD, MINING_HAMMER, SPADE, SAW,
                                 HARD_HAMMER, WRENCH, FILE, CROWBAR, SCREWDRIVER, MORTAR, WIRE_CUTTER,
@@ -143,7 +145,8 @@ public class GTBMaterials {
                                 SCREWDRIVER_LV, WIRE_CUTTER_LV, WIRE_CUTTER_HV, WIRE_CUTTER_IV)
                         .magnetic().build())
                 .blastTemp(3500, BlastProperty.GasTier.MID, (int) GTVoltage.VA.IV, 1600)
-                .flags(GENERATE_FRAME, GENERATE_GEAR, DISABLE_DECOMPOSITION, GENERATE_PLATE, GENERATE_ROD)
+                .flags(GENERATE_FRAME, GENERATE_GEAR, DISABLE_DECOMPOSITION, GENERATE_PLATE,
+                        GENERATE_ROD, GENERATE_RING)
                 .fluidPipeProperties(2426, 300, true, false, false, false)
                 .color(0xed64d4).iconSet(SHINY)
                 .components(Titanium, 3, Rhodium, 2, DRAGONSTONE, 1)
@@ -157,7 +160,7 @@ public class GTBMaterials {
                 .fluid()
                 .blastTemp(7100, BlastProperty.GasTier.HIGH, (int) GTVoltage.VA.ZPM, 2400)
                 .flags(GENERATE_FRAME, GENERATE_GEAR, DISABLE_DECOMPOSITION, GENERATE_PLATE, GENERATE_ROD,
-                        DISABLE_ALLOY_BLAST)
+                        DISABLE_ALLOY_BLAST, GENERATE_RING)
                 .toolStats(ToolProperty.Builder.of(48.0F, 22.0F, 4096, 6)
                         .types(PICKAXE, AXE, HOE, SHOVEL, SWORD, MINING_HAMMER, SPADE, SAW,
                                 HARD_HAMMER, WRENCH, FILE, CROWBAR, SCREWDRIVER, MORTAR, WIRE_CUTTER,
@@ -167,7 +170,8 @@ public class GTBMaterials {
                         .magnetic().build())
                 .fluidPipeProperties(3776, 400, true, true, true, true)
                 .color(0x8c2929).iconSet(BRIGHT)
-                .components(ELEMENTIUM, 8, VESNIUM_PLACEHOLDER, 6, Duranium, 3, TitaniumTungstenCarbide, 2, AETHER, 1)
+                .components(ELEMENTIUM, 8, VESNIUM_PLACEHOLDER, 6, Duranium, 3, TitaniumTungstenCarbide, 2, GAIA_ICHOR,
+                        1)
                 .buildAndRegister();
 
         GAIAFORGED_NAQUADAH = new Material.Builder(GTBotania.id("gaiaforged_naquadah"))
@@ -205,6 +209,7 @@ public class GTBMaterials {
         ingot.setIgnored(ELEMENTIUM, () -> BotaniaItems.elementium);
         block.setIgnored(ELEMENTIUM, () -> BotaniaBlocks.elementiumBlock);
         nugget.setIgnored(ELEMENTIUM, () -> BotaniaItems.elementiumNugget);
+        dust.setIgnored(ELEMENTIUM, () -> BotaniaItems.pixieDust);
 
         ingot.setIgnored(GAIASTEEL, () -> {
             try {
