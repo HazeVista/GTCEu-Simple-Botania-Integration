@@ -93,7 +93,7 @@ public class GTBMaterials {
                 .blastTemp(1000, BlastProperty.GasTier.LOW, 120, 400)
                 .flags(GENERATE_FRAME, GENERATE_GEAR, DISABLE_DECOMPOSITION, GENERATE_PLATE, GENERATE_RING,
                         GENERATE_ROD, MORTAR_GRINDABLE, DISABLE_ALLOY_BLAST, DISABLE_ALLOY_PROPERTY)
-                .toolStats(new ToolProperty(9.0F, 8.0F, 768, 3,
+                .toolStats(new ToolProperty(9.0F, 8.0F, 1024, 3,
                         new GTToolType[] { PICKAXE, AXE, HOE, SHOVEL, SWORD, MINING_HAMMER, SPADE, SAW,
                                 HARD_HAMMER, WRENCH, FILE, CROWBAR, SCREWDRIVER, MORTAR, WIRE_CUTTER,
                                 SCYTHE, KNIFE, BUTCHERY_KNIFE, DRILL_EV, DRILL_HV, DRILL_LV, DRILL_IV,
@@ -120,7 +120,7 @@ public class GTBMaterials {
                 .blastTemp(1700, BlastProperty.GasTier.LOW, (int) GTVoltage.VA.MV, 800)
                 .flags(GENERATE_FRAME, GENERATE_GEAR, DISABLE_DECOMPOSITION, GENERATE_PLATE,
                         GENERATE_ROD, DISABLE_ALLOY_BLAST, DISABLE_ALLOY_PROPERTY, GENERATE_RING)
-                .toolStats(new ToolProperty(11.0F, 14.0F, 1024, 4,
+                .toolStats(new ToolProperty(11.0F, 14.0F, 1536, 4,
                         new GTToolType[] { PICKAXE, AXE, HOE, SHOVEL, SWORD, MINING_HAMMER, SPADE, SAW,
                                 HARD_HAMMER, WRENCH, FILE, CROWBAR, SCREWDRIVER, MORTAR, WIRE_CUTTER,
                                 SCYTHE, KNIFE, BUTCHERY_KNIFE, DRILL_EV, DRILL_HV, DRILL_LV, DRILL_IV,
@@ -137,7 +137,7 @@ public class GTBMaterials {
                 .langValue("§dAlfsteel")
                 .ingot()
                 .fluid()
-                .toolStats(ToolProperty.Builder.of(20.0F, 16.0F, 2048, 5)
+                .toolStats(ToolProperty.Builder.of(20.0F, 16.0F, 3072, 5)
                         .types(PICKAXE, AXE, HOE, SHOVEL, SWORD, MINING_HAMMER, SPADE, SAW,
                                 HARD_HAMMER, WRENCH, FILE, CROWBAR, SCREWDRIVER, MORTAR, WIRE_CUTTER,
                                 SCYTHE, KNIFE, BUTCHERY_KNIFE, DRILL_EV, DRILL_HV, DRILL_LV, DRILL_IV,
@@ -161,7 +161,7 @@ public class GTBMaterials {
                 .blastTemp(7100, BlastProperty.GasTier.HIGH, (int) GTVoltage.VA.ZPM, 2400)
                 .flags(GENERATE_FRAME, GENERATE_GEAR, DISABLE_DECOMPOSITION, GENERATE_PLATE, GENERATE_ROD,
                         DISABLE_ALLOY_BLAST, GENERATE_RING)
-                .toolStats(ToolProperty.Builder.of(48.0F, 22.0F, 4096, 6)
+                .toolStats(ToolProperty.Builder.of(48.0F, 22.0F, 8192, 6)
                         .types(PICKAXE, AXE, HOE, SHOVEL, SWORD, MINING_HAMMER, SPADE, SAW,
                                 HARD_HAMMER, WRENCH, FILE, CROWBAR, SCREWDRIVER, MORTAR, WIRE_CUTTER,
                                 SCYTHE, KNIFE, BUTCHERY_KNIFE, DRILL_EV, DRILL_HV, DRILL_LV, DRILL_IV,
