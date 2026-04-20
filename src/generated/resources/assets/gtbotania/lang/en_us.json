@@ -1,4 +1,8 @@
 {
+  "block.gtbotania.elementium_crate": "Elementium Crate",
+  "block.gtbotania.gaiasteel_crate": "Gaiasteel Crate",
+  "block.gtbotania.manasteel_crate": "Manasteel Crate",
+  "block.gtbotania.terrasteel_crate": "Terrasteel Crate",
   "itemGroup.gtbotania.creative_tab": "Gregtania",
   "material.gtbotania.aether": "§3Æther§r",
   "material.gtbotania.dormant_terrasteel": "Dormant §2Terrasteel§r",

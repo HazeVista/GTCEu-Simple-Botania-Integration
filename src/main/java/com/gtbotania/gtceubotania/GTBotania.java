@@ -1,6 +1,7 @@
 package com.gtbotania.gtceubotania;
 
 import com.gtbotania.gtceubotania.common.data.materials.GTBMaterials;
+import com.gtbotania.gtceubotania.common.machine.crate.GTBCrates;
 import com.gtbotania.gtceubotania.datagen.GTBDatagen;
 
 import com.gregtechceu.gtceu.api.GTCEuAPI;
@@ -133,7 +134,7 @@ public class GTBotania {
      * @param event
      */
     private void registerMachines(GTCEuAPI.RegisterEvent<ResourceLocation, MachineDefinition> event) {
-        // CustomMachines.init();
+        GTBCrates.register();
     }
 
     /**

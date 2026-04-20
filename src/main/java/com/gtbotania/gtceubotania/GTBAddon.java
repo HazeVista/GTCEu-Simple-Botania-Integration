@@ -2,6 +2,7 @@ package com.gtbotania.gtceubotania;
 
 import com.gtbotania.gtceubotania.common.data.GTBotaniaItems;
 import com.gtbotania.gtceubotania.common.data.materials.GTBElements;
+import com.gtbotania.gtceubotania.common.data.recipe.GTBCrateRecipes;
 import com.gtbotania.gtceubotania.common.registry.GTBRegistry;
 
 import com.gregtechceu.gtceu.api.addon.GTAddon;
@@ -40,7 +41,7 @@ public class GTBAddon implements IGTAddon {
 
     @Override
     public void addRecipes(Consumer<FinishedRecipe> provider) {
-        // CustomRecipes.init(provider);
+        GTBCrateRecipes.init(provider);
     }
 
     @Override
